@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>signup</title>
+</head>
+
+<body>
+    <h1>名前登録</h1>
+    <form action="/signup" method="POST">
+        名前:<br>
+        <input type="text" name="name"><br>
+        パスワード:<br>
+        <input type="text" name="passwd">
+        <button type="submit">新規登録</button>
+    </form>
+
+    <form action="/login" method="POST">
+        名前:<br>
+        <input type="text" name="name"><br>
+        パスワード:<br>
+        <input type="text" name="passwd">
+        <button type="submit">ログイン</button>
+    </form>
+
+    登録情報
+    <table border="1">
+        <tr>
+            <th>名前</th>
+            <th>パスワード</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>
+                {{ user.name }}
+            </td>
+            <td>
+                {{ user.passwd }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
